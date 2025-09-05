@@ -1,0 +1,28 @@
+<Html lang="en">
+    <head>
+        <title>Personal Bio</title>
+    </head>
+    <body>
+        <h2> Ahla Usman</h2>
+        <p> Highschool student  </p>
+        <hr>
+        <h3> <b>About me</b></h3>
+        <p>I'm a curious and passionate high school student eager to learn and grow. 
+            I enjoy exploring new fields and developing skills that prepare me for the future. 
+        </p>
+
+<p><i>Here are some of the things I focus on:</i></p>
+<ul type="disc">
+    <li>Learning web development basics</li>
+    <li>Practicing Arabic calligraphy </li>
+    <li> Reading books and watching documentaries</li>
+    <li> Seeking new ideas and ways to improve myself</li>
+    <li> Enterpreneurship</li>
+</ul>
+<hr>
+<h3> <b>Contact</b></h3>
+<P> <b>Email:</b> ahlausman139@gmail.com</P>
+<p><b>location:</b>  Addis Ababa, Ethiopia</p>
+<footer>NSDA Sisters Community</footer>
+    </body>
+</Html>
