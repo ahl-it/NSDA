@@ -1,89 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    .form{
-    background-color: #cfa55b44;
-    color: black;
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>To-do-list</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
+        color: rgb(140, 150, 228) ;
+        text-shadow: 0 0 50px rgb(166, 173, 228);
+        }
+        
+        body{
+            display: flex;
+            align-items: flex-start;
+            margin: 0;
+            background-color: rgb(2, 5, 26);
+            padding: 20px;
+            justify-content: center;
+            background-color:rgb(2, 5, 26) ;
+            
+        }
+        div{
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .todo-list{
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color:rgba(52, 55, 82, 0.4)  ;
+            padding: 20px;
+            max-width: 95%;
+            width: 350px;
+            justify-content: center;
+            min-height:40vh ;
+            border-radius: 20px;
+            box-sizing: border-box;
+            margin-top: 8%;
+            box-shadow: 0 0 18px 5px rgba(177, 183, 228, 0.7);
+            
+        }
+        .task{
+            line-height: 25px;
+            margin: 10px;
+            border-radius:8px ;
+            border: 1px solid #ccc ;
+            padding: 5px;
+            width: 250px;
+            box-sizing: border-box;
+
+        
+        }
+        .check-box{
+        
+            width: 15px;
+            margin-left: 10px;
+
+        }
+        @media (max-width: 480px) {
+        h1 {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .todo-list {
+            padding: 15px;
+            size: 1.5em; 
+        }
+    }
+        
+    </style>
+
     
-    margin-left: 250px;
-    margin-right: 250px;
-    margin-top: 150px;
-    border-radius: 50px;
-    padding-top: 8px;
-    padding-bottom: 18px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-    .main{
-        text-align: center;
-        line-height: 50px;
-    }
-    h1{
-        text-align: center;
-    }
-    button{
-        padding-left: 8px;
-        padding-right: 8px;
-        padding-top: 4px;
-        padding-bottom: 4px;
-        text-align: center;
-        border-radius: 8px;
-        border-width: 0.2px;
-        border-style: solid;
-        cursor: pointer;
-        border-color: rgba(59, 56, 53, 0.671);
-        font-family: Arial;
-        background-color: rgba(122, 112, 99, 0.082);
-        color: black;
-    }
-    button:active{
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-    input{
-        border-radius: 4px;
-        border-width: 1px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 4px;
-    }
-    body{
-        margin-left: auto;
-        margin-right: auto;
-    }
 
-</style>
-
-<body>
-    <div class="form">
-        <h1> Welcome to the <i>Malcolm X</i> Tribute Page</h1>
-        <div class="main">
-        <label> <b>Full Name:</b></label>
-        <input type="text" name="full-name" placeholder="Enter your Full name"><br>
-        <label><b>Email: </b> </label>
-        <input type="email" name="email-address" placeholder="example@gmail.com"><br>
-        <label><b>Gender</b></label>
-        <input type="radio" name="gender">Male
-        <input type="radio" name="gender">Female<br>
-        <label><b>Country</b></label>
-        <select>
-            <option>Algeria</option>
-            <option>Egypt</option>
-            <option> Ethiopia</option>
-            <option>Morocco</option>
-            <option> Tunisia</option>
-            <option>other</option>
-        </select><br>
-        <a href="biography.html"><button>Submit</button></a>
+    </head>
+    <body >
+        <div class="todo-list">
+            
+        <h1>  
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 10">
+            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+            <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+            </svg> 
+            To-Do List
+        </h1>
+            <div>
+                <input class="task" type="Text" placeholder="Task-1">
+                <input class="check-box" type="checkbox">
+            </div>
+            <div>
+                <input class="task" type="text" placeholder="Task-2">
+                <input  class="check-box" type="checkbox">
+            </div>
+            <div>
+                <input  class="task" type="text" placeholder="Task-3">
+                <input  class="check-box" type="checkbox">
+            </div>
+            <div>
+                <input  class="task" type="text" placeholder="Task-4">
+                <input class="check-box"  type="checkbox">
+            </div>
+            <div>
+                <input  class="task" type="text" placeholder="Task-5">
+                <input  class="check-box" type="checkbox">
+            </div>
         </div>
 
+        <script>
+        /*Greet the user*/
+        alert("Welcome to your personal TO-Do-List!");
+        console.log("To-Do List app loaded successfully");
+        let userName = prompt("What is your name?");
+        if(userName) {
+            alert("Hello, " + userName + "! Ready to organize your tasks?");
+            console.log(userName + " has started using the To-Do List.");
+        } else {
+            alert("Hello! Let's get started with your tasks.");
+            console.log("User didn't enter a name but is using the To-Do List.");
+        }
+        /* Individual task objects*/
+            const task1 = { id: 1, name: "Buy groceries", completed: false };
+            const task2 = { id: 2, name: "Pray Salah",completed: false };
+            const task3 = { id: 3, name: "Do Dhikr",completed: true };
+            const task4 = { id: 4, name: "Do homework",completed: false };
+            const task5 = { id: 5, name: "watch podcasts", completed: true };
 
-    </div>
-</body>
-</html>
+            console.log(task1, task2, task3, task4, task5);
+
+        /* Messages based on task status */
+        console.log( task1.completed? ` Task ${task1.name}   is completed!`
+        : `Task  ${ task1.name } is still pending.`);
+        console.log( task2.completed? ` Task ${task2.name}   is completed!`
+        : `Task  ${ task2.name } is still pending.`);
+        console.log( task3.completed? ` Task ${task3.name}   is completed!`
+        : `Task  ${ task3.name } is still pending.`);
+        console.log( task4.completed? ` Task ${task4.name}   is completed!`
+        : `Task  ${ task4.name } is still pending.`);
+        console.log( task5.completed? ` Task ${task5.name}   is completed!`
+        : `Task  ${ task5.name } is still pending.`);
+    </script>
+    
+    </body>
+    </html>
