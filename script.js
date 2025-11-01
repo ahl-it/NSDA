@@ -1,41 +1,28 @@
-const inputBox= document.getElementById('input-box');
-const listContainer= document.getElementById('list-container');
-function addTask(event) {
-    event.preventDefault();
+const taskList = document.getElementById('task-list');
+const taskCount = document.getElementById('task-count');
 
-    if (inputBox.value === '') {
-        alert('You must add your task');
-    } else {
-        let li = document.createElement("li");
-
-        let checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.className = "task-checkbox";
-
-        let taskText = document.createElement("span");
-        taskText.className = "task-text";
-        taskText.innerText = inputBox.value;
-
-        
-        let deleteBtn = document.createElement("span");
-        deleteBtn.innerHTML = "\u00d7";
-        deleteBtn.className = "delete-btn";
-
-    
-        li.appendChild(checkbox);
-        li.appendChild(taskText);
-        li.appendChild(deleteBtn);
-        listContainer.appendChild(li);
-    }
-
-    inputBox.value = "";
+function updateCount() {
+  taskCount.textContent = taskList.children.length;
 }
 
+function addTask() {
+  const input = document.getElementById('task-input');
+  const taskText = input.value.trim();
+  if(taskText === "") return;
 
-listContainer.addEventListener("click", function(e){
-    if (e.target.tagName=== "LI"){
-        e.target.classList.toggle("checked");
-    }else if (e.target.tagName=== "SPAN"){
-        e.target.parentElement.remove();
-    }
-} , false); 
+  const li = document.createElement('li');
+  li.textContent = taskText;
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'Delete';
+  deleteBtn.onclick = function() {
+    li.remove();
+    updateCount();
+  }
+
+  li.appendChild(deleteBtn);
+  taskList.appendChild(li);
+
+  input.value = '';
+  updateCount();
+}
